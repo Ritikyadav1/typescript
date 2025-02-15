@@ -5,40 +5,6 @@
 // // TypeScript is a superset of JavaScript, which means any valid JavaScript code is also a valid TypeScript code. TypeScript code is transformed into JavaScript code via the TypeScript compiler or the Babel compiler. The TypeScript compiler is known as tsc.
 // // TypeScript is a statically typed language, which means you can catch errors and bugs at the development stage. It needs to be compiled to JavaScript to run in the browser.
 // // TypeScript is a modern language that supports the latest JavaScript features like ES6, ES7, and ES8. It also supports features like modules, classes, and interfaces.
-var __runInitializers = (this && this.__runInitializers) || function (thisArg, initializers, value) {
-    var useValue = arguments.length > 2;
-    for (var i = 0; i < initializers.length; i++) {
-        value = useValue ? initializers[i].call(thisArg, value) : initializers[i].call(thisArg);
-    }
-    return useValue ? value : void 0;
-};
-var __esDecorate = (this && this.__esDecorate) || function (ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
-    function accept(f) { if (f !== void 0 && typeof f !== "function") throw new TypeError("Function expected"); return f; }
-    var kind = contextIn.kind, key = kind === "getter" ? "get" : kind === "setter" ? "set" : "value";
-    var target = !descriptorIn && ctor ? contextIn["static"] ? ctor : ctor.prototype : null;
-    var descriptor = descriptorIn || (target ? Object.getOwnPropertyDescriptor(target, contextIn.name) : {});
-    var _, done = false;
-    for (var i = decorators.length - 1; i >= 0; i--) {
-        var context = {};
-        for (var p in contextIn) context[p] = p === "access" ? {} : contextIn[p];
-        for (var p in contextIn.access) context.access[p] = contextIn.access[p];
-        context.addInitializer = function (f) { if (done) throw new TypeError("Cannot add initializers after decoration has completed"); extraInitializers.push(accept(f || null)); };
-        var result = (0, decorators[i])(kind === "accessor" ? { get: descriptor.get, set: descriptor.set } : descriptor[key], context);
-        if (kind === "accessor") {
-            if (result === void 0) continue;
-            if (result === null || typeof result !== "object") throw new TypeError("Object expected");
-            if (_ = accept(result.get)) descriptor.get = _;
-            if (_ = accept(result.set)) descriptor.set = _;
-            if (_ = accept(result.init)) initializers.unshift(_);
-        }
-        else if (_ = accept(result)) {
-            if (kind === "field") initializers.unshift(_);
-            else descriptor[key] = _;
-        }
-    }
-    if (target) Object.defineProperty(target, contextIn.name, descriptor);
-    done = true;
-};
 // // key features:
 // // 1. TypeScript is a superset of JavaScript.
 // // 2. TypeScript is a statically typed language.
@@ -551,30 +517,16 @@ var __esDecorate = (this && this.__esDecorate) || function (ctor, descriptorIn, 
 // decorators in typescript
 // In TypeScript, decorators are used to add metadata to classes, methods, and properties. Decorators are a special kind of declaration that can be attached to a class declaration
 // In TypeScript, you can create decorators using the @ symbol followed by the decorator name. Here is an example of a decorator:
-function log(target) {
-    console.log("decorator was called");
-}
-let person = (() => {
-    var _a;
-    let _instanceExtraInitializers = [];
-    let _greet_decorators;
-    return _a = class person {
-            greet() {
-                console.log("Hello World");
-            }
-            constructor() {
-                __runInitializers(this, _instanceExtraInitializers);
-            }
-        },
-        (() => {
-            const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
-            _greet_decorators = [log];
-            __esDecorate(_a, null, _greet_decorators, { kind: "method", name: "greet", static: false, private: false, access: { has: obj => "greet" in obj, get: obj => obj.greet }, metadata: _metadata }, null, _instanceExtraInitializers);
-            if (_metadata) Object.defineProperty(_a, Symbol.metadata, { enumerable: true, configurable: true, writable: true, value: _metadata });
-        })(),
-        _a;
-})();
-let p = new person();
-p.greet();
+// function log(target: any) {
+//     console.log("decorator was called");
+// }
+// class person {
+//   @log
+//     greet() {
+//         console.log("Hello World");
+//     }
+// }
+// let p = new person();
+// p.greet();
 // In this example, we have created a decorator log that logs the method name when the method is called. We have applied the decorator to the greet method of the person class. When the greet method is called, the decorator logs the method name "greet".
 // Decorators are used to add metadata to classes, methods, and properties in TypeScript. You can create decorators using the @ symbol followed by the decorator name.

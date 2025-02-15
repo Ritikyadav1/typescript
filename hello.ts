@@ -584,18 +584,18 @@
 // decorators in typescript
 // In TypeScript, decorators are used to add metadata to classes, methods, and properties. Decorators are a special kind of declaration that can be attached to a class declaration
 // In TypeScript, you can create decorators using the @ symbol followed by the decorator name. Here is an example of a decorator:
-function log(target: any) {
-    console.log("decorator was called");
-}
+// function log(target: any) {
+//     console.log("decorator was called");
+// }
 
-class person {
-  @log
-    greet() {
-        console.log("Hello World");
-    }
-}
-let p = new person();
-p.greet();
+// class person {
+//   @log
+//     greet() {
+//         console.log("Hello World");
+//     }
+// }
+// let p = new person();
+// p.greet();
 
 // In this example, we have created a decorator log that logs the method name when the method is called. We have applied the decorator to the greet method of the person class. When the greet method is called, the decorator logs the method name "greet".
 // Decorators are used to add metadata to classes, methods, and properties in TypeScript. You can create decorators using the @ symbol followed by the decorator name.
