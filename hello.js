@@ -174,3 +174,7 @@
 // 1. Numeric Enums: Numeric enums are enums where each member has a numeric value. Numeric enums are the default type of enums in TypeScript.
 // 2. String Enums: String enums are enums where each member has a string value. String enums are useful when you need to have a human-readable representation of the enum values.
 // 3. Heterogeneous Enums: Heterogeneous enums are enums where some members have numeric values and others have string values. Heterogeneous enums are not recommended as they can be confusing.
+let a = 10;
+let b = 20;
+let sum = a + b;
+console.log(sum); // Output: 30
